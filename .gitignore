@@ -1,0 +1,11 @@
+# Claude Code
+.claude/
+.claude/settings.local.json
+CLAUDE.md
+CLAUDE.local.md
+.mcp.json
+
+# Claude Code memory / transcripts (stored under the user home, but ignore if ever copied here)
+.claude/projects/
+.claude/memory/
+**/memory/MEMORY.md
