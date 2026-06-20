@@ -1,16 +1,15 @@
 country_decisions = {
 
 	# ==========================================================
-	# Pan-Slavic assimilation - one decision per culture group
-	# (-200 DIP each) and per individual culture (-100 DIP each).
-	# Only available while primary culture is in the slavic group
-	# (russian_new etc.) AND we own at least one province of the
-	# target culture. Converts only our OWN provinces of that
-	# culture to russian_new. The decision reappears whenever we
-	# conquer a new matching non-slavic province.
+	# Pan-Slavic assimilation. Each decision converts the provinces
+	# you OWN of the targeted culture(s) to their Slavic (_new)
+	# counterpart (e.g. estonian -> estonian_new), keeping each
+	# culture's own identity but placing it in the slavic group.
+	# Only while your primary culture is in the slavic group.
+	# Cost: 5 diplomatic power per converted province, paid per
+	# province so you can never go below 0. The decision reappears
+	# whenever you conquer a new matching non-slavic province.
 	# ==========================================================
-
-	# ---------- Culture groups (-200 DIP) ----------
 
 	br_assimilate_baltic = {
 		potential = {
@@ -23,10 +22,26 @@ country_decisions = {
 		effect = {
 			custom_tooltip = br_assimilate_cost_tt
 			every_owned_province = {
-				limit = { culture_group = baltic }
+				limit = { culture = estonian }
 				if = {
 					limit = { owner = { dip_power = 5 } }
-					change_culture = russian_new
+					change_culture = estonian_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = lithuanian }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = lithuanian_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = latvian }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = latvian_new
 					owner = { add_dip_power = -5 }
 				}
 			}
@@ -45,10 +60,26 @@ country_decisions = {
 		effect = {
 			custom_tooltip = br_assimilate_cost_tt
 			every_owned_province = {
-				limit = { culture_group = carpathian }
+				limit = { culture = transylvanian }
 				if = {
 					limit = { owner = { dip_power = 5 } }
-					change_culture = russian_new
+					change_culture = transylvanian_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = romanian }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = romanian_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = hungarian }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = hungarian_new
 					owner = { add_dip_power = -5 }
 				}
 			}
@@ -67,10 +98,42 @@ country_decisions = {
 		effect = {
 			custom_tooltip = br_assimilate_cost_tt
 			every_owned_province = {
-				limit = { culture_group = byzantine }
+				limit = { culture = greek }
 				if = {
 					limit = { owner = { dip_power = 5 } }
-					change_culture = russian_new
+					change_culture = greek_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = pontic_greek }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = pontic_greek_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = cappadocian_greek }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = cappadocian_greek_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = goths }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = goths_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = griko }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = griko_new
 					owner = { add_dip_power = -5 }
 				}
 			}
@@ -89,10 +152,34 @@ country_decisions = {
 		effect = {
 			custom_tooltip = br_assimilate_cost_tt
 			every_owned_province = {
-				limit = { culture_group = caucasian }
+				limit = { culture = georgian }
 				if = {
 					limit = { owner = { dip_power = 5 } }
-					change_culture = russian_new
+					change_culture = georgian_s_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = circassian }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = circassian_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = dagestani }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = dagestani_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = armenian }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = armenian_new
 					owner = { add_dip_power = -5 }
 				}
 			}
@@ -111,10 +198,58 @@ country_decisions = {
 		effect = {
 			custom_tooltip = br_assimilate_cost_tt
 			every_owned_province = {
-				limit = { culture_group = tartar }
+				limit = { culture = astrakhani }
 				if = {
 					limit = { owner = { dip_power = 5 } }
-					change_culture = russian_new
+					change_culture = astrakhani_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = bashkir }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = bashkir_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = crimean }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = crimean_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = kazani }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = kazani_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = mishary }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = mishary_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = nogaybak }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = nogaybak_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = siberian }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = siberian_new
 					owner = { add_dip_power = -5 }
 				}
 			}
@@ -133,10 +268,74 @@ country_decisions = {
 		effect = {
 			custom_tooltip = br_assimilate_cost_tt
 			every_owned_province = {
-				limit = { culture_group = altaic }
+				limit = { culture = mongol }
 				if = {
 					limit = { owner = { dip_power = 5 } }
-					change_culture = russian_new
+					change_culture = mongol_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = chahar }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = chahar_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = khalkha }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = khalkha_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = oirats }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = oirats_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = uzbehk }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = uzbehk_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = turkmeni }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = turkmeni_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = uyghur }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = uyghur_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = khazak }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = khazak_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = kirgiz }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = kirgiz_new
 					owner = { add_dip_power = -5 }
 				}
 			}
@@ -155,10 +354,34 @@ country_decisions = {
 		effect = {
 			custom_tooltip = br_assimilate_cost_tt
 			every_owned_province = {
-				limit = { culture_group = finno_ugric }
+				limit = { culture = uralic }
 				if = {
 					limit = { owner = { dip_power = 5 } }
-					change_culture = russian_new
+					change_culture = uralic_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = samoyed }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = samoyed_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = ostyaki }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = ostyaki_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = ingrian }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = ingrian_new
 					owner = { add_dip_power = -5 }
 				}
 			}
@@ -177,10 +400,50 @@ country_decisions = {
 		effect = {
 			custom_tooltip = br_assimilate_cost_tt
 			every_owned_province = {
-				limit = { culture_group = evenks }
+				limit = { culture = evenk }
 				if = {
 					limit = { owner = { dip_power = 5 } }
-					change_culture = russian_new
+					change_culture = evenk_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = yakut }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = yakut_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = yukagyr }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = yukagyr_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = buryat }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = buryat_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = tungus }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = tungus_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = manchu }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = manchu_s_new
 					owner = { add_dip_power = -5 }
 				}
 			}
@@ -199,10 +462,26 @@ country_decisions = {
 		effect = {
 			custom_tooltip = br_assimilate_cost_tt
 			every_owned_province = {
-				limit = { culture_group = kamchatkan_g }
+				limit = { culture = ainu }
 				if = {
 					limit = { owner = { dip_power = 5 } }
-					change_culture = russian_new
+					change_culture = ainu_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = kamchatkan }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = kamchatkan_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = nivkh }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = nivkh_new
 					owner = { add_dip_power = -5 }
 				}
 			}
@@ -221,18 +500,80 @@ country_decisions = {
 		effect = {
 			custom_tooltip = br_assimilate_cost_tt
 			every_owned_province = {
-				limit = { culture_group = iranian }
+				limit = { culture = persian }
 				if = {
 					limit = { owner = { dip_power = 5 } }
-					change_culture = russian_new
+					change_culture = persian_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = luri }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = luri_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = azerbaijani }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = azerbaijani_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = khorasani }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = khorasani_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = baluchi }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = baluchi_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = afghani }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = afghani_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = kurdish }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = kurdish_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = mazandarani }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = mazandarani_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+			every_owned_province = {
+				limit = { culture = turco_iranian }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = turco_iranian_new
 					owner = { add_dip_power = -5 }
 				}
 			}
 		}
 		ai_will_do = { factor = 0 }
 	}
-
-	# ---------- Individual cultures (-100 DIP) ----------
 
 	br_assimilate_turkish = {
 		potential = {
@@ -248,7 +589,7 @@ country_decisions = {
 				limit = { culture = turkish }
 				if = {
 					limit = { owner = { dip_power = 5 } }
-					change_culture = russian_new
+					change_culture = turkish_new
 					owner = { add_dip_power = -5 }
 				}
 			}
@@ -270,7 +611,7 @@ country_decisions = {
 				limit = { culture = karelian }
 				if = {
 					limit = { owner = { dip_power = 5 } }
-					change_culture = russian_new
+					change_culture = karelian_new
 					owner = { add_dip_power = -5 }
 				}
 			}
@@ -292,7 +633,7 @@ country_decisions = {
 				limit = { culture = finnish }
 				if = {
 					limit = { owner = { dip_power = 5 } }
-					change_culture = russian_new
+					change_culture = finnish_new
 					owner = { add_dip_power = -5 }
 				}
 			}
@@ -314,11 +655,12 @@ country_decisions = {
 				limit = { culture = sapmi }
 				if = {
 					limit = { owner = { dip_power = 5 } }
-					change_culture = russian_new
+					change_culture = sapmi_new
 					owner = { add_dip_power = -5 }
 				}
 			}
 		}
 		ai_will_do = { factor = 0 }
 	}
+
 }
