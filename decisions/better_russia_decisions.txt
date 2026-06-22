@@ -663,4 +663,70 @@ country_decisions = {
 		ai_will_do = { factor = 0 }
 	}
 
+	br_assimilate_albanian = {
+		potential = {
+			culture_group = slavic
+			any_owned_province = { culture = albanian }
+		}
+		allow = {
+			dip_power = 5
+		}
+		effect = {
+			custom_tooltip = br_assimilate_cost_tt
+			every_owned_province = {
+				limit = { culture = albanian }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = albanian_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+
+	br_assimilate_prussian = {
+		potential = {
+			culture_group = slavic
+			any_owned_province = { culture = prussian }
+		}
+		allow = {
+			dip_power = 5
+		}
+		effect = {
+			custom_tooltip = br_assimilate_cost_tt
+			every_owned_province = {
+				limit = { culture = prussian }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = prussian_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+
+	br_assimilate_baltic_german = {
+		potential = {
+			culture_group = slavic
+			any_owned_province = { culture = baltic_german }
+		}
+		allow = {
+			dip_power = 5
+		}
+		effect = {
+			custom_tooltip = br_assimilate_cost_tt
+			every_owned_province = {
+				limit = { culture = baltic_german }
+				if = {
+					limit = { owner = { dip_power = 5 } }
+					change_culture = latvian_new
+					owner = { add_dip_power = -5 }
+				}
+			}
+		}
+		ai_will_do = { factor = 0 }
+	}
+
 }
